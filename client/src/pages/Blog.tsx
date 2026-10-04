@@ -7,7 +7,7 @@ import { usePageMeta } from "@/lib/page-meta";
 export default function Blog() {
   usePageMeta({
     title: "Blog.log | Jhalak Upadhyay",
-    description: "Notes on system design (HLD and LLD) and the distributed systems I build. A new post every week.",
+    description: "Notes, deep dives and things I've learned while building software.",
   });
   const [tag, setTag] = useState<string | null>(null);
   const visible = tag ? posts.filter((post) => post.tags.includes(tag)) : posts;
@@ -23,7 +23,7 @@ export default function Blog() {
                 <ScrambleText text="Blog.log" />
               </h1>
               <p className="text-primary text-lg max-w-xl font-mono">
-                Notes on system design, HLD and LLD, and the distributed systems I build. New post every week.
+                Notes, deep dives and things I've learned while building software.
               </p>
             </div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 text-right">

@@ -2,7 +2,7 @@
 title: Your post title
 date: 2026-01-31
 summary: One or two sentences shown on the blog list and in link previews.
-tags: [system-design, lld]
+tags: [topic, another-topic]
 # canonical: https://medium.com/... (only if the post was published somewhere else first)
 # draft: true (visible in `npm run dev`, hidden on the live site)
 ---

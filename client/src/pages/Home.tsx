@@ -784,7 +784,7 @@ export default function Home() {
                   <ScrambleText text="Blog.log" />
                 </h2>
                 <p className="text-primary text-lg max-w-xl font-mono">
-                  Writing about system design, one post every week.
+                  Notes, deep dives and things I've learned along the way.
                 </p>
               </div>
               <Link href="/blog" className="hover-target inline-flex items-center text-accent hover:text-white text-lg font-mono uppercase tracking-widest">
