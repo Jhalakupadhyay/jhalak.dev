@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-04-25",
+  "assets": {
+    "directory": "./dist",
+    // Serve index.html for app routes like /blog/<slug>; the client router
+    // renders the page (or its own 404).
+    "not_found_handling": "single-page-application"
+  },
+  "routes": [{ "pattern": "jhalak.dev", "custom_domain": true }]
+}

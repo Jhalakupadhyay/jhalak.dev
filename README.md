@@ -3,7 +3,7 @@
 Source for [jhalak.dev](https://jhalak.dev), my portfolio and blog.
 
 Built with React, TypeScript, Vite, Tailwind CSS and Framer Motion. Deployed
-to Cloudflare Pages by GitHub Actions on every push to `main`.
+to Cloudflare Workers by GitHub Actions on every push to `main`.
 
 ## Run locally
 
@@ -38,11 +38,14 @@ add `canonical:` with the original URL.
 ## Deployment
 
 `.github/workflows/deploy.yml` type-checks, validates posts and builds on every
-push and pull request. Pushes to `main` are then deployed to Cloudflare Pages.
+push and pull request. Pushes to `main` are then deployed with
+`wrangler deploy`, which uploads `dist/` to the `portfolio` Worker
+configured in `wrangler.jsonc` and serves it on jhalak.dev.
 
-It needs these repository settings:
+It needs two repository secrets:
 
-- Secret `CLOUDFLARE_API_TOKEN`: an API token with the *Cloudflare Pages: Edit*
-  permission.
-- Secret `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account ID.
-- Variable `CLOUDFLARE_PAGES_PROJECT`: the Pages project name.
+- `CLOUDFLARE_API_TOKEN`: an API token created from the *Edit Cloudflare
+  Workers* template.
+- `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account ID.
+
+To deploy by hand instead: `npm run build && npx wrangler deploy`.
