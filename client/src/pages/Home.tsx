@@ -50,11 +50,11 @@ const skills = [
   },
   {
     category: "Databases & Caching",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "Redis", "Query Optimization", "Indexing"]
+    items: ["PostgreSQL", "ClickHouse", "MySQL", "MongoDB", "Supabase", "Redis", "Query Optimization", "Indexing"]
   },
   {
     category: "Cloud, DevOps & Observability",
-    items: ["AWS", "Azure", "Docker", "Kubernetes", "GitHub Actions", "Gcore", "Shadeform", "Grafana", "Kibana"]
+    items: ["AWS", "Azure", "Docker", "Kubernetes", "GitHub Actions", "Grafana", "Kibana"]
   },
   {
     category: "Tools & Practices",
@@ -64,12 +64,24 @@ const skills = [
 
 const experience = [
   {
-    company: "Substrate.ai",
+    company: "Velerion",
     role: "Software Development Engineer — Backend & Platform",
-    period: "Feb 2026 — Present",
+    period: "Jun 2026 — Present",
     location: "Remote",
     bullets: [
-      "Architected & shipped a unified GPU compute marketplace integrating Gcore and Shadeform APIs — single interface for reserved capacity and on-demand GPU consumption.",
+      "Architected & shipped a GPU-fleet observability platform end-to-end — Bun + Hono API, BullMQ workers on Valkey, and ClickHouse rollups fed by a self-updating DCGM agent.",
+      "Designed alerting across GPU and host signals (thermals, VRAM, ECC/XID errors, heartbeat) with sustained-for debounce and grouped email notifications.",
+      "Built the observability dashboard in React 19 + TanStack Router — fleet overview, per-host drill-down, metrics explorer, logs, alerts, and audit trail on live data.",
+      "Shipped the console's enterprise section across frontend and backend — volumes, images, SSH keys, object storage, networking, firewalls, and load balancers."
+    ]
+  },
+  {
+    company: "Substrate.ai",
+    role: "Software Development Engineer — Backend & Platform",
+    period: "Feb 2026 — Jun 2026",
+    location: "Remote",
+    bullets: [
+      "Architected & shipped a unified, provider-agnostic GPU compute marketplace — single interface for reserved capacity and on-demand GPU consumption.",
       "Built the platform end-to-end with Vue.js + Supabase (Postgres, Auth, Edge Functions), cutting GPU provisioning from hours to minutes for onboarding customers.",
       "Designed an observability layer across on-demand and marketplace workloads, surfacing real-time GPU utilization, job health, and billing via Grafana dashboards.",
       "Hardened auth, rate limiting, and RLS policies across the Supabase backend to enable secure multi-tenant access for enterprise customers."
@@ -170,13 +182,13 @@ function InteractiveTerminal() {
           response = "Available: whoami, skills, experience, projects, education, contact, clear, sudo";
           break;
         case 'whoami':
-          response = "Jhalak Upadhyay — SDE @ Substrate.ai. Backend & Platform engineer. GSoC mentor @ FOSSASIA.";
+          response = "Jhalak Upadhyay — SDE @ Velerion. Backend & Platform engineer. GSoC mentor @ FOSSASIA.";
           break;
         case 'skills':
-          response = "Java/Spring Boot, TypeScript, Vue.js, Flutter, Postgres, Redis, Kafka, Supabase, Docker, K8s, AWS, Azure.";
+          response = "Java/Spring Boot, TypeScript, React, Vue.js, Flutter, Postgres, ClickHouse, Redis, Kafka, Docker, K8s, AWS, Azure.";
           break;
         case 'experience':
-          response = "Substrate.ai (2026-) > Gpu.net (2025-26) > FOSSASIA GSoC (2024-) > Infinisync (2024-25).";
+          response = "Velerion (2026-) > Substrate.ai (2026) > Gpu.net (2025-26) > FOSSASIA GSoC (2024-) > Infinisync (2024-25).";
           break;
         case 'projects':
           response = "Badge Magic (Flutter, 1.9K+ stars), PreSalesforce.ai (backend+AI), Gpunet Feed (Kafka fan-out).";
@@ -537,7 +549,7 @@ export default function Home() {
                 </div>
               </h1>
               <p className="text-zinc-400 text-lg md:text-xl font-mono mt-6 max-w-2xl border-l-2 border-accent pl-4">
-                SDE — Backend &amp; Platform at <span className="text-white">Substrate.ai</span>. Google Summer of Code mentor at FOSSASIA. I turn messy, ambitious systems — GPU marketplaces, event-driven feeds, AI orchestration pipelines — into things people can actually ship.
+                SDE — Backend &amp; Platform at <span className="text-white">Velerion</span>. Google Summer of Code mentor at FOSSASIA. I turn messy, ambitious systems — GPU marketplaces, event-driven feeds, AI orchestration pipelines — into things people can actually ship.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3 font-mono text-[11px] uppercase tracking-widest">
@@ -558,7 +570,7 @@ export default function Home() {
               <div className="flex-1 border-t border-primary/30 pt-4 bg-black/40 p-4 relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                 <strong className="text-primary font-mono block mb-2">{">"} ABOUT_</strong>
-                I work on the backend of AI platforms — GPU orchestration, event-driven fan-out systems, and the plumbing that makes the shiny parts possible. Today at Substrate.ai I&apos;m shipping a unified GPU compute marketplace across Gcore and Shadeform; before that I architected a Kafka-style fan-out feed at Gpu.net and cut API latency ~40% with Redis + indexing. My open-source path started as a GSoC 2024 mentee building Badge Magic for FOSSASIA — a year later I came back as a mentor. I care about systems that are honest about their failure modes and code the next person can actually read.
+                I work on the backend of AI platforms — GPU orchestration, event-driven fan-out systems, and the plumbing that makes the shiny parts possible. Today at Velerion I&apos;m building GPU-fleet observability and the enterprise side of a GPU cloud console; before that I shipped a provider-agnostic GPU marketplace at Substrate.ai and architected a Kafka-style fan-out feed at Gpu.net and cut API latency ~40% with Redis + indexing. My open-source path started as a GSoC 2024 mentee building Badge Magic for FOSSASIA — a year later I came back as a mentor. I care about systems that are honest about their failure modes and code the next person can actually read.
               </div>
             </motion.div>
           </div>
@@ -602,7 +614,7 @@ export default function Home() {
             </div>
             <div className="font-mono text-[10px] uppercase tracking-widest text-zinc-500 text-right">
               <div>[ chronological // descending ]</div>
-              <div className="text-accent mt-1">5 ROLES // 2 CONTINENTS</div>
+              <div className="text-accent mt-1">6 ROLES // 2 CONTINENTS</div>
             </div>
           </div>
 
