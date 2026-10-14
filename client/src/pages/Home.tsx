@@ -32,10 +32,10 @@ const projects = [
     link: "https://presalesforce.ai"
   },
   {
-    title: "Gpunet Feed Platform",
-    description: "Event-driven fan-out feed ingesting events across multiple Gpunet products into a personalized per-user feed. Scaled producer writes while keeping read latency low; Redis caching cut p95 ~40%.",
-    tags: ["Kafka", "Spring Boot", "PostgreSQL", "Redis"],
-    link: "https://gpu.net"
+    title: "Velerion GPU Observability",
+    description: "GPU-fleet observability platform built end to end, ingesting telemetry from a self-updating DCGM agent across 60+ hosts and 300+ GPUs. Alerting on thermals, VRAM, ECC/XID errors, and heartbeats with sustained-duration debounce cut duplicate alerts ~70%.",
+    tags: ["Bun + Hono", "BullMQ", "Valkey", "ClickHouse"],
+    link: "https://obs.velerion.com"
   }
 ];
 
@@ -191,7 +191,7 @@ function InteractiveTerminal() {
           response = "Velerion (2026-) > Substrate.ai (2026) > Gpu.net (2025-26) > FOSSASIA GSoC (2024-) > Infinisync (2024-25).";
           break;
         case 'projects':
-          response = "Badge Magic (Flutter, 1.9K+ stars), PreSalesforce.ai (backend+AI), Gpunet Feed (Kafka fan-out).";
+          response = "Badge Magic (Flutter, 1.9K+ stars), PreSalesforce.ai (backend+AI), Velerion Observability (GPU-fleet telemetry).";
           break;
         case 'education':
           response = "B.Tech CSE, KIET Group of Institutions (2021-2025). CGPA 8.3/10.";
